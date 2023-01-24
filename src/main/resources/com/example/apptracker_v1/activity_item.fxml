@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="562.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apptracker_v1.ActivityItemController">
+   <children>
+      <Button fx:id="is_favorite" mnemonicParsing="false" onAction="#on_select" style="-fx-background-color: inherit;">
+         <graphic>
+            <ImageView fx:id="fav_img" fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/main_form_tabs/icon_favorites.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+      </Button>
+      <Label fx:id="url" prefHeight="45.0" prefWidth="435.0" text="http://loyalty-program.crocuscitymall.ru/" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="is_active" fitHeight="33.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/main_form_tabs/icon_green_tick.png" />
+         </image>
+         <HBox.margin>
+            <Insets right="15.0" />
+         </HBox.margin>
+      </ImageView>
+   </children>
+</HBox>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="700.0" style="-fx-background-color: #075c75;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apptracker_v1.MainFormController">
+   <children>
+      <AnchorPane layoutY="91.0" prefHeight="559.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
+         <children>
+            <TabPane fx:id="mainF_tabPane" layoutX="25.0" layoutY="30.0" prefHeight="486.0" prefWidth="644.0" side="LEFT" stylesheets="@CSS/main_form_stylesheet.css" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab>
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-radius: 5; -fx-border-color: black;">
+                           <children>
+                              <Text layoutX="16.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Активность" wrappingWidth="298.93669509887695">
+                                 <font>
+                                    <Font name="Forte" size="17.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="act_field_search" layoutX="402.0" layoutY="14.0" promptText="Поиск" style="-fx-border-color: black;" />
+                              <Button fx:id="btn_act_search" layoutX="552.0" layoutY="14.0" maxHeight="34.0" mnemonicParsing="false" onAction="#on_act_search" prefWidth="29.0" style="-fx-max-width: 27.2; -fx-max-height: 27.2; -fx-min-height: 27.2; -fx-min-width: 27.2; -fx-background-color: #fafafa; -fx-border-color: black; -fx-background-image: images\main_form_tabs\icon_search.png;">
+                                 <graphic>
+                                    <ImageView fx:id="img_search11" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/main_form_tabs/icon_search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <ChoiceBox fx:id="act_choice" layoutX="244.0" layoutY="14.0" opacity="0.73" prefHeight="27.0" prefWidth="152.0" style="-fx-border-color: black; -fx-background-color: white;" />
+                              <HBox layoutX="16.0" layoutY="55.0" prefHeight="410.0" prefWidth="563.0">
+                                 <children>
+                                    <ScrollPane prefHeight="394.0" prefWidth="564.0" stylesheets="@CSS/main_form_stylesheet.css">
+                                       <content>
+                                          <VBox fx:id="sites_activity_list" prefHeight="406.0" prefWidth="546.0" spacing="10.0" style="-fx-background-color: white;">
+                                             <padding>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </padding></VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </HBox>
+                           </children></AnchorPane>
+                  </content>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/main_form_tabs/icon_activity.png" />
+                           </image></ImageView>
+                     </graphic>
+                </Tab>
+                <Tab>
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-radius: 5; -fx-border-color: black;">
+                           <children>
+                              <Text layoutX="16.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Статистика" wrappingWidth="102.0">
+                                 <font>
+                                    <Font name="Forte" size="17.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="stat_field_search" layoutX="402.0" layoutY="14.0" promptText="Поиск" style="-fx-border-color: black;" />
+                              <Button fx:id="btn_stat_search" layoutX="552.0" layoutY="14.0" maxHeight="34.0" mnemonicParsing="false" onAction="#on_stat_search" prefWidth="29.0" style="-fx-max-width: 27.2; -fx-max-height: 27.2; -fx-min-height: 27.2; -fx-min-width: 27.2; -fx-background-color: #fafafa; -fx-border-color: black; -fx-background-image: images\main_form_tabs\icon_search.png;">
+                                 <graphic>
+                                    <ImageView fx:id="img_search1" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/main_form_tabs/icon_search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <ListView fx:id="stat_list" layoutX="16.0" layoutY="56.0" prefHeight="412.0" prefWidth="564.0" />
+                              <ChoiceBox fx:id="stat_choice" layoutX="244.0" layoutY="14.0" opacity="0.73" prefHeight="27.0" prefWidth="152.0" style="-fx-border-color: black; -fx-background-color: white;" />
+                           </children></AnchorPane>
+                  </content>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/main_form_tabs/icon_statistics.png" />
+                           </image></ImageView>
+                     </graphic>
+                </Tab>
+                  <Tab>
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-radius: 5; -fx-border-color: black;">
+                           <children>
+                              <Text layoutX="135.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Режим администратора" textAlignment="CENTER" wrappingWidth="298.93669509887695">
+                                 <font>
+                                    <Font name="Forte" size="17.0" />
+                                 </font>
+                              </Text>
+                              <ChoiceBox fx:id="adm_choice" layoutX="14.0" layoutY="57.0" opacity="0.73" prefHeight="27.0" prefWidth="214.0" style="-fx-background-color: #fafafa; -fx-border-color: black;" />
+                              <ListView fx:id="adm_list" layoutX="15.0" layoutY="96.0" prefHeight="330.0" prefWidth="564.0" />
+                              <TextField fx:id="adm_field_search" layoutX="402.0" layoutY="57.0" promptText="Поиск" style="-fx-border-color: black;" />
+                              <Button fx:id="btn_adm_search" layoutX="551.0" layoutY="57.0" maxHeight="34.0" mnemonicParsing="false" onAction="#on_adm_search" prefWidth="29.0" style="-fx-max-width: 27.2; -fx-max-height: 27.2; -fx-min-height: 27.2; -fx-min-width: 27.2; -fx-background-color: #fafafa; -fx-border-color: black; -fx-background-image: images\main_form_tabs\icon_search.png;">
+                                 <graphic>
+                                    <ImageView fx:id="img_search" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/main_form_tabs/icon_search.png" />
+                                       </image></ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="adm_change" layoutX="15.0" layoutY="437.0" mnemonicParsing="false" onAction="#on_adm_change" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: #ef882d;" text="Изменить" textFill="WHITE">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children></AnchorPane>
+                    </content>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/main_form_tabs/icon_admin.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </Tab>
+                  <Tab>
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="486.0" prefWidth="556.0" style="-fx-border-color: black; -fx-border-radius: 5;">
+                           <children>
+                              <Label layoutX="46.0" layoutY="90.0" prefHeight="34.0" prefWidth="73.0" text="Статус:">
+                                 <font>
+                                    <Font name="Franklin Gothic Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="129.0" prefHeight="34.0" prefWidth="73.0" text="ID:">
+                                 <font>
+                                    <Font name="Franklin Gothic Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="46.0" layoutY="167.0" prefHeight="34.0" prefWidth="73.0" text="Логин:">
+                                 <font>
+                                    <Font name="Franklin Gothic Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="45.0" layoutY="207.0" prefHeight="34.0" prefWidth="73.0" text="Пароль:">
+                                 <font>
+                                    <Font name="Franklin Gothic Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="46.0" layoutY="242.0" prefHeight="34.0" prefWidth="73.0" text="E-mail:">
+                                 <font>
+                                    <Font name="Franklin Gothic Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="45.0" layoutY="280.0" prefHeight="34.0" prefWidth="73.0" text="Телефон:">
+                                 <font>
+                                    <Font name="Franklin Gothic Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="46.0" layoutY="317.0" prefHeight="34.0" prefWidth="73.0" text="Рассылка:">
+                                 <font>
+                                    <Font name="Franklin Gothic Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="user_save" layoutX="14.0" layoutY="429.0" mnemonicParsing="false" onAction="#on_user_save" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: #ef882d;" text="Сохранить" textFill="WHITE">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="user_reset" layoutX="127.0" layoutY="428.0" mnemonicParsing="false" onAction="#on_user_reset" prefHeight="34.0" prefWidth="103.0" style="-fx-background-color: #ef882d;" text="Сбросить" textFill="WHITE">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi" size="12.0" />
+                                 </font>
+                              </Button>
+                              <RadioButton fx:id="user_show_pass" layoutX="312.0" layoutY="215.0" mnemonicParsing="false" text="Показать пароль">
+                                 <font>
+                                    <Font name="Franklin Gothic Book" size="14.0" />
+                                 </font></RadioButton>
+                              <TextField fx:id="user_pass" layoutX="124.0" layoutY="210.0" style="-fx-border-color: silver; -fx-border-radius: 5;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></TextField>
+                              <TextField fx:id="user_mail" layoutX="123.0" layoutY="246.0" style="-fx-border-color: silver; -fx-border-radius: 5;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></TextField>
+                              <TextField fx:id="user_phoneN" layoutX="123.0" layoutY="283.0" style="-fx-border-color: silver; -fx-border-radius: 5;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></TextField>
+                              <Text fx:id="user_status" layoutX="123.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="150.936767578125">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Text>
+                              <Text fx:id="user_id" layoutX="123.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="150.936767578125">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Text>
+                              <ChoiceBox fx:id="user_choiceB" layoutX="123.0" layoutY="320.0" opacity="0.73" prefHeight="27.0" prefWidth="174.0" style="-fx-background-color: #fafafa; -fx-border-color: #968f8f; -fx-border-radius: 5;" />
+                              <TextField fx:id="user_log" layoutX="123.0" layoutY="170.0" style="-fx-border-color: silver; -fx-border-radius: 5;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></TextField>
+                              <Text layoutX="124.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ваш профиль" textAlignment="CENTER" wrappingWidth="298.93669509887695">
+                                 <font>
+                                    <Font name="Forte" size="17.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/main_form_tabs/icon_user.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children></AnchorPane>
+      <Line endX="378.00006103515625" endY="-7.62939453125E-6" layoutX="322.0" layoutY="93.0" startX="-322.0" startY="-7.62939453125E-6" stroke="#ef882d" strokeWidth="4.0" />
+      <Circle fill="#fafafa" layoutX="83.0" layoutY="60.0" radius="51.0" stroke="#ef882d" strokeType="INSIDE" strokeWidth="4.0" />
+      <ImageView fitHeight="71.0" fitWidth="103.0" layoutX="32.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/www_logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="259.0" layoutY="26.0" prefHeight="47.0" prefWidth="182.0" text="AppTracker" textFill="#efe2e2">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="mf_close" layoutX="572.0" layoutY="35.0" mnemonicParsing="false" onAction="#onClose" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: #ef882d;" text="Выход" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Demi" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
