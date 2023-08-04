@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="490.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apptracker.SettingsController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IP сервера:" textAlignment="CENTER" wrappingWidth="75.60744571685791">
+         <font>
+            <Font name="Franklin Gothic Book" size="15.0" />
+         </font>
+      </Text>
+      <TextField fx:id="ip_server" prefHeight="26.0" prefWidth="403.0" style="-fx-border-radius: 0;" styleClass="admin_url" stylesheets="@CSS/main_form_stylesheet.css">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="14.0" />
+         </font></TextField>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#on_change_ip" prefHeight="24.0" prefWidth="20.0" style="-fx-background-color: inherit; -fx-padding: 0; -fx-margin: 0;">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/main_form_tabs/icon_change.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets left="10.0" />
+   </padding>
+</HBox>
